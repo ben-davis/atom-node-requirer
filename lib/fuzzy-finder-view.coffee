@@ -101,7 +101,7 @@ class FuzzyFinderView extends SelectListView
     if @useOldRequireSyntax
       editor.insertText("var " + name + " = require("+ "'" + relativePath + "')")
     else 
-      editor.insertText("import " + name + " from "+ "'" + relativePath + "'")
+      editor.insertText("import " + name + " from "+ "'" + relativePath + "';")
         
   getFilterKey: ->
     'projectRelativePath'
@@ -229,7 +229,9 @@ class FuzzyFinderView extends SelectListView
   #
   # Or, in this case: test an alternate scoring algorithm.
   #
-  # This is modified copy/paste from SelectListView#populateList, require jQuery!
+  # This is modified copy/paste 
+  
+  SelectListView#populateList, require jQuery!
   # Should be temporary
 
   populateAlternateList: ->
